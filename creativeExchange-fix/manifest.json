@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Creative Exchange Export Fix",
+  "version": "1.0.0",
+  "description": "Fixes the Add button in AEM Creative Exchange Export dialog (Select paths multifield).",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Creative Exchange Export Fix"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/apps/zg/creativeExchange/content/export.html*"
+      ],
+      "js": ["content/fix-export-dialog.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
